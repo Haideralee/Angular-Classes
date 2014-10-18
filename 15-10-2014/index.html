@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Todo</title>
+    <script src="angular.min.js" ></script>
+</head>
+<body>
+    <div ng-controller="myCtrl1">
+       <input type="text" ng-model="newItem" />
+       <input type="button" ng-click="addItem()" value="addItem">
+       <p>{{newItem}}</p>
+        <ul>
+           <li ng-repeat="item in items">
+               {{item.title}}
+               {{item.subtitle}}
+           </li>
+       </ul>
+    </div>
+
+    <div ng-controller="myCtrl2">
+        <input type="text" ng-model="name" />
+        <p>{{name}}</p>
+    </div>
+
+    <script>
+        function myCtrl1($scope){
+            $scope.name ='Haider';
+            $scope.items =[
+                {title: 'title 1', subtitle: 'subtitle 1'},
+                {title: 'title 2', subtitle: 'subtitle 2'},
+                {title: 'title 3', subtitle: 'subtitle 3'}
+            ];
+            $scope.addItem = function(){
+                if(!$scope.newItem) return;
+                $scope.items.push({title:$scope.newItem});
+                $scope.newItem = null;
+
+            }
+        }
+
+        function myCtrl2($scope){
+            $scope.name = 'Ali';
+        }
+    </script>
+</body>
+</html>

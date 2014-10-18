@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular class two</title>
+    <script src="angular.min.js"></script>
+
+</head>
+<body>
+<div ng-controller="TodoController">
+    <!--<ul>-->
+    <!--<li ng-repeat="(key, value) in items | filter:name;">-->
+    <!--<p>{{key + ' ' + value}}</p>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <input type="text" ng-model="name" placeholder="Search Name here">
+    <!--<input type="button" ng-click="addItem()" value="additem">-->
+    <ul>
+        <li ng-repeat="item in items | filter:name;">
+            <strong>{{item.name}}</strong>
+            <span>{{item.phone}}</span>
+        </li>
+    </ul>
+    <input type="checkbox" name="c1" ng-model="item1">
+    <label for="c1">Show</label>
+    <input type="checkbox" name="c1" ng-model="item2">
+    <label for="c1">hide</label>
+    <input type="checkbox" name="c1" ng-model="item3">
+    <label for="c1">display</label>
+
+    <div ng-show="item1"><h3>ng-show</h3></div>
+    <div ng-hide="item2"><h3>ng-hide</h3></div>
+    <div ng-if="item3"><h3>ng-if</h3></div>
+
+
+
+</div>
+<script>
+    // if array in key than we use key in keys array loop
+    // if object in key than we use (key,value) in keys object loop
+    angular.module('todoApp', [])
+        .controller('TodoController', ['$scope', function($scope) {
+//            $scope.items = {
+//                title: 'lorem',
+//                age: 20,
+//                type: 'M'
+//            };
+            $scope.items= [{name:'John', phone:'555-1276'},
+                {name:'Mary', phone:'800-BIG-MARY'},
+                {name:'Mike', phone:'555-4321'},
+                {name:'Adam', phone:'555-5678'},
+                {name:'Julie', phone:'555-8765'}
+            ];
+            $scope.item1 = false;
+            $scope.item2 = false;
+            $scope.item3 = false;
+
+
+        }]);
+
+</script>
+</body>
+</html>
