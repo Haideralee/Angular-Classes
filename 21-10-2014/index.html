@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>21-10-2014</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!--
+    json stand for :-
+    javascript
+    object
+    notation
+
+    services has two type
+        core services
+        custom services
+    --->
+</head>
+<body>
+    <div class="container-fluid well">
+        <div ng-controller="firstController">
+            <input class="form-control" type="text" ng-model="testing">
+            <h1>Hello {{testing}}</h1>
+            <input type="button" value="fetch" ng-click="fetch()" class="btn btn-success">
+            <h1></h1>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="person in persons">
+                    <span class="badge">{{$index}}</span>
+                    <p><strong>Name </strong>{{person.name}}</p>
+                    <p><strong>Age </strong>{{person.age}}</p>
+                    <p><strong>Destination </strong><i>{{person.destination}}</i></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+body{
+    margin: 20px auto;
+    padding: 0;
+}
+.app_wrapper{
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    width: 665px;
+}
+.pointer{
+    cursor: pointer;
+}
+.add_bt{margin-bottom: 1px !important;}
+
+.clear
+{display: block !important;
+margin-bottom: 5px;}

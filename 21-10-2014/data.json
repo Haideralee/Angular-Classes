@@ -1,0 +1,17 @@
+[
+    {
+        "name": "John",
+        "age": "22",
+        "destination": "Web Developer"
+    },
+    {
+        "name": "Alex",
+        "age": "28",
+        "destination": "Web designer"
+    },
+    {
+        "name": "Merry",
+        "age": "32",
+        "destination": "Manager"
+    }
+]
